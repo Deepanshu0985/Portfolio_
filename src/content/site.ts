@@ -1,63 +1,70 @@
 // Everything on the site comes from this file: edit here to change your name,
-// contact links, services, prices or projects.
+// contact links, services, projects or FAQs.
 
 export const site = {
   name: "Deepanshu Yadav",
   role: "Software & AI Engineer",
-  headline: "I build AI chatbots, automations and modern web apps that save businesses time.",
+  headlineLead: "I build",
+  // Rotates in the hero headline.
+  headlineWords: ["AI chatbots", "AI automations", "modern websites", "full-stack apps", "mobile apps"],
+  headlineTail: "that grow your business.",
   intro:
-    "I'm a full-time software developer and AI engineer. I take on a small number of freelance projects at a time, so every client gets focused attention, clear communication and a working product, not just code.",
+    "I'm a full-time software developer and AI engineer working with businesses in India and around the world. I take on a few projects at a time, so you get focused attention, clear communication and a product that works.",
   // Contact links: leave a value empty to hide that button.
   contact: {
     email: "",
     calendly: "",
+    whatsapp: "", // e.g. "https://wa.me/91XXXXXXXXXX"
     linkedin: "",
     github: "https://github.com/Deepanshu0985",
   },
-  responseTime: "I reply within 24 hours, Monday to Saturday.",
+  responseTime: "I reply within 24 hours.",
 };
 
-export type Service = { title: string; description: string; from: string; icon: string };
+export type Service = { title: string; description: string; icon: string; outcome: string };
 
 export const services: Service[] = [
   {
     icon: "🤖",
-    title: "AI chatbots for your website",
-    description:
-      "A 24/7 assistant trained on your business: answers customers accurately, captures leads and books appointments.",
-    from: "$499",
+    title: "AI chatbots",
+    description: "A 24/7 assistant trained on your business that answers customers accurately and captures leads.",
+    outcome: "Never miss an enquiry",
   },
   {
     icon: "⚙️",
     title: "AI automation",
-    description:
-      "Remove repetitive work: lead triage, email drafting, document processing and CRM updates that run on their own.",
-    from: "$349",
+    description: "Lead triage, email drafting, document processing and CRM updates that run on their own.",
+    outcome: "Hours saved every week",
   },
   {
     icon: "🔌",
     title: "AI integration",
-    description: "Add AI features to the product you already have: smart search, summaries, assistants and content tools.",
-    from: "$799",
+    description: "Smart search, summaries, assistants and content tools added to the product you already have.",
+    outcome: "AI where it adds value",
   },
   {
     icon: "🌐",
     title: "Modern websites",
-    description: "Fast, responsive, SEO-ready sites and landing pages built to turn visitors into customers.",
-    from: "$499",
+    description: "Fast, responsive, SEO-ready websites and landing pages designed to turn visitors into customers.",
+    outcome: "More visitors become clients",
   },
   {
     icon: "💻",
     title: "Full-stack web apps",
-    description: "SaaS products, dashboards, portals and MVPs, from database to deployment.",
-    from: "$2,500",
+    description: "SaaS products, dashboards, portals and MVPs, from database design to deployment.",
+    outcome: "Launch your idea properly",
   },
   {
     icon: "📱",
     title: "Mobile apps",
-    description: "Cross-platform iOS and Android apps with one codebase.",
-    from: "$3,000",
+    description: "Cross-platform iOS and Android apps from a single codebase.",
+    outcome: "Reach customers on their phones",
   },
+];
+
+export const techStack = [
+  "Next.js", "React", "TypeScript", "Node.js", "Python", "Java", "Spring Boot", "PostgreSQL",
+  "Supabase", "Tailwind CSS", "React Native", "Mistral AI", "OpenAI", "RAG", "n8n", "Vercel",
 ];
 
 export type Project = {
@@ -68,6 +75,8 @@ export type Project = {
   highlights: string[];
   stack: string[];
   links: { label: string; href: string }[];
+  images?: { src: string; alt: string }[];
+  visual?: "spendwise";
   note?: string;
 };
 
@@ -76,79 +85,79 @@ export const projects: Project[] = [
     name: "AI Receptionist for a Dental Clinic",
     tagline: "AI chatbot + lead follow-up automation",
     problem:
-      "Clinics lose patients when questions arrive after hours and no one answers, and staff spend hours replying to the same questions.",
+      "Clinics lose patients when questions arrive after hours, and staff spend hours answering the same questions and chasing enquiries.",
     solution:
-      "An AI assistant that answers from the clinic's own information, captures appointment requests, and automatically triages every lead with a drafted reply for the front desk.",
+      "An AI assistant that answers from the clinic's own information, books appointment requests, and automatically triages every lead with a drafted reply for the front desk.",
     highlights: [
-      "Answers only from the business's own knowledge (RAG), and says so when it doesn't know",
+      "Answers only from the business's own knowledge, and says so when it doesn't know",
       "Emergency safety rules, no diagnosis, resistant to prompt-injection attempts",
-      "In-chat booking form; every request triaged as urgent, high value or routine",
-      "AI-drafted reply email per lead, sent in one click from a staff dashboard",
-      "Installs on any existing website with one line of code",
-      "19 automated behaviour tests for the AI's answers",
+      "Every request triaged as urgent, high value or routine, with an AI-drafted reply",
+      "Staff dashboard; installs on any website with one line of code",
     ],
     stack: ["Next.js", "TypeScript", "Mistral AI", "Supabase", "Vercel"],
-    links: [
-      { label: "Try the live demo", href: "https://brightsmile-dental-ai-one.vercel.app" },
+    links: [{ label: "Try the live demo", href: "https://brightsmile-dental-ai-one.vercel.app" }],
+    images: [
+      { src: "/work/dental-chat.webp", alt: "AI assistant answering a patient and taking an appointment request" },
+      { src: "/work/dental-dashboard.webp", alt: "Staff dashboard with AI-triaged leads and drafted replies" },
     ],
-    note: "Demo for a fictional clinic.",
+    note: "Demo built for a fictional clinic.",
   },
   {
     name: "Spendwise",
     tagline: "Personal finance app with grounded AI",
     problem:
-      "People can't easily answer where their money went, which subscriptions they pay for, or why spending changed month to month.",
+      "People can't easily see where their money went, which subscriptions they pay for, or why spending changed.",
     solution:
-      "A full-stack finance app that imports bank and card PDF statements, detects duplicates, transfers and recurring payments, and explains spending with an AI assistant that only uses verified data.",
+      "A full-stack finance app that imports bank and card statements, detects duplicates, transfers and recurring payments, and explains spending with an AI assistant that only uses verified data.",
     highlights: [
-      "PDF statement import with text extraction, OCR fallback and review before import",
+      "PDF statement import with OCR fallback and review before import",
       "Duplicate, transfer, refund and recurring-payment detection",
-      "Deterministic analytics, budgets and savings goals",
-      "AI assistant limited to allowlisted backend tools, never raw database access",
-      "Per-user data isolation enforced by PostgreSQL row-level security",
+      "Analytics, budgets and savings goals",
+      "AI assistant limited to safe backend tools, with per-user data isolation in the database",
     ],
     stack: ["React", "TypeScript", "Java", "Spring Boot", "PostgreSQL"],
     links: [{ label: "View the app", href: "https://spendwise-frontend-sand.vercel.app" }],
+    visual: "spendwise",
     note: "In active development.",
   },
 ];
 
 export const process = [
-  { step: "1", title: "Free discovery call", text: "15–30 minutes to understand your goals. You get a written scope and a fixed quote." },
-  { step: "2", title: "Design & build", text: "A preview or staging link early, then weekly progress updates you can click through." },
-  { step: "3", title: "Launch", text: "I deploy to your domain, hosting or app store and walk you through everything." },
-  { step: "4", title: "Support", text: "Free bug fixes after launch, plus optional monthly maintenance." },
+  { step: "01", title: "Free discovery call", text: "We talk about your goals. You get a clear plan, timeline and fixed quote." },
+  { step: "02", title: "Design & build", text: "You see a working preview early and get progress updates every week." },
+  { step: "03", title: "Launch", text: "I deploy it on your domain, hosting or app store and walk you through it." },
+  { step: "04", title: "Support", text: "Free bug fixes after launch, and optional monthly maintenance." },
 ];
 
 export const included = [
-  "Written scope and fixed price before work starts",
-  "Revision rounds included in every project",
-  "Weekly progress updates",
+  "Fixed quote and written scope before work starts",
+  "Revision rounds included at every stage",
+  "Weekly progress updates and a live preview",
   "Mobile-friendly, fast and SEO-ready",
-  "Deployment and handover: source code, access and a video walkthrough",
-  "Free bug fixes for 14–60 days after launch",
+  "Full source code and accounts in your name",
+  "Free bug fixes after launch",
 ];
 
 export const faqs = [
   {
+    q: "How much does a project cost?",
+    a: "It depends on what you need, so every project gets a fixed quote after a short free call. You know the full price before anything starts, and I'll suggest options that fit your budget.",
+  },
+  {
+    q: "Do you work with clients in India and abroad?",
+    a: "Yes, both. For clients in India I quote in rupees and accept UPI or bank transfer. For international clients I quote in USD and accept Wise, PayPal or bank transfer.",
+  },
+  {
     q: "How does payment work?",
-    a: "Small projects: 50% to start and 50% before launch. Larger projects are split into milestones. Payment by bank transfer, Wise, Payoneer or PayPal in USD.",
+    a: "Usually 50% to start and 50% before launch. Larger projects are split into milestones, so you only pay as you see progress.",
   },
   {
     q: "How many revisions do I get?",
-    a: "Every project includes set revision rounds (usually two per stage). New features beyond the agreed scope are quoted separately, so there are no surprises.",
+    a: "Every project includes revision rounds at each stage. Anything new beyond the agreed scope is quoted separately, so there are no surprises.",
   },
   {
     q: "Who owns the code?",
-    a: "You do. After the final payment you get the full source code and all accounts are in your name.",
-  },
-  {
-    q: "What about AI running costs?",
-    a: "AI usage is billed to your own provider account, usually a few dollars a month for a small business. I'll estimate it for you up front.",
-  },
-  {
-    q: "We're in a different time zone. Is that a problem?",
-    a: "No. I work asynchronously with clear written updates, and schedule calls at a time that suits you. Many clients like waking up to finished work.",
+    a: "You do. After the final payment you get the full source code, and all accounts are in your name.",
   },
   {
     q: "How long does a project take?",

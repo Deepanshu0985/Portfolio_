@@ -8,10 +8,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const description = "AI chatbots, AI automation, modern websites, full-stack and mobile apps for businesses in India and worldwide.";
+
 export const metadata: Metadata = {
   title: `${site.name} · ${site.role}`,
-  description: site.headline,
-  openGraph: { title: `${site.name} · ${site.role}`, description: site.headline, type: "website" },
+  description,
+  openGraph: { title: `${site.name} · ${site.role}`, description, type: "website" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
