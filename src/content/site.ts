@@ -1,31 +1,29 @@
-// Everything on the site comes from this file: edit here to change your name,
+// Everything on the site comes from this file: edit here to change the brand,
 // contact links, services, projects or FAQs.
 
 export const site = {
   // Brand: shown in the logo, page titles and share previews.
-  brand: "Deepanshu",
-  brandSuffix: ".dev",
+  brand: "Nexvora",
+  brandSuffix: "Labs",
   tagline: "AI & software studio",
-  name: "Deepanshu Yadav",
-  role: "Software & AI Engineer",
   headline: { before: "Your business, running", highlight: "smarter with AI." },
   // Rotates in the line under the hero headline.
   headlineWords: ["AI chatbots", "AI automations", "modern websites", "full-stack apps", "mobile apps"],
   subheadline: "For businesses in India and around the world. Built by an engineer, delivered with a fixed quote.",
   intro:
-    "Deepanshu.dev is the studio of Deepanshu Yadav, a full-time software developer and AI engineer. You work directly with the person building your product, with no middlemen and no hand-offs.",
+    "Nexvora Labs is an engineer-led AI and software studio. You talk directly to the people building your product, with no sales team, no middlemen and no hand-offs.",
   // Contact links: leave a value empty to hide that button.
   contact: {
     email: "deepanshu.dev.ai098@gmail.com",
     calendly: "",
     whatsapp: "", // e.g. "https://wa.me/91XXXXXXXXXX"
     linkedin: "",
-    github: "https://github.com/Deepanshu0985",
+    github: "",
   },
   responseTime: "Replies within 24 hours.",
 };
 
-export const brandName = `${site.brand}${site.brandSuffix}`;
+export const brandName = `${site.brand} ${site.brandSuffix}`;
 
 /** Honest, checkable trust points (no invented numbers). */
 export const proofPoints = [
@@ -38,8 +36,8 @@ export const proofPoints = [
 export const pillars = [
   {
     icon: "🤝",
-    title: "Work with the engineer",
-    text: "No sales team, no hand-offs. The person on your call is the person writing your code.",
+    title: "Talk to the engineers",
+    text: "No sales team, no hand-offs. The people on your call are the people writing your code.",
   },
   {
     icon: "🧠",
@@ -162,7 +160,7 @@ export const projects: Project[] = [
 export const process = [
   { step: "01", title: "Free discovery call", text: "We talk about your goals. You get a clear plan, timeline and fixed quote." },
   { step: "02", title: "Design & build", text: "You see a working preview early and get progress updates every week." },
-  { step: "03", title: "Launch", text: "I deploy it on your domain, hosting or app store and walk you through it." },
+  { step: "03", title: "Launch", text: "We deploy it on your domain, hosting or app store and walk you through it." },
   { step: "04", title: "Support", text: "Free bug fixes after launch, and optional monthly maintenance." },
 ];
 
@@ -178,11 +176,11 @@ export const included = [
 export const faqs = [
   {
     q: "How much does a project cost?",
-    a: "It depends on what you need, so every project gets a fixed quote after a short free call. You know the full price before anything starts, and I'll suggest options that fit your budget.",
+    a: "It depends on what you need, so every project gets a fixed quote after a short free call. You know the full price before anything starts, and we'll suggest options that fit your budget.",
   },
   {
     q: "Do you work with clients in India and abroad?",
-    a: "Yes, both. For clients in India I quote in rupees and accept UPI or bank transfer. For international clients I quote in USD and accept Wise, PayPal or bank transfer.",
+    a: "Yes, both. For clients in India we quote in rupees and accept UPI or bank transfer. For international clients we quote in USD and accept Wise, PayPal or bank transfer.",
   },
   {
     q: "How does payment work?",

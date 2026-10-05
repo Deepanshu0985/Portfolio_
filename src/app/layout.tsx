@@ -13,7 +13,7 @@ const description =
 const title = `${brandName} · ${site.tagline}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://deepanshu-portfolio-two.vercel.app"),
+  metadataBase: new URL("https://nexvoralabs.vercel.app"),
   title,
   description,
   openGraph: { title, description, type: "website", siteName: brandName },

@@ -1,6 +1,6 @@
-# Deepanshu.dev
+# Nexvora Labs
 
-Portfolio site for Deepanshu.dev, an AI & software studio: services, live projects, process, pricing, FAQ and contact.
+Portfolio site for Nexvora Labs, an AI & software studio: services, live projects, process, pricing, FAQ and contact.
 
 Built with Next.js, TypeScript and Tailwind CSS. Fully static.
 

@@ -28,8 +28,8 @@ function ContactButtons() {
   const { email, calendly, whatsapp, linkedin, github } = site.contact;
   const links = [
     calendly && { label: "Book a free call", href: calendly, external: true },
-    whatsapp && { label: "WhatsApp me", href: whatsapp, external: true },
-    email && { label: "Email me", href: `mailto:${email}`, external: false },
+    whatsapp && { label: "WhatsApp us", href: whatsapp, external: true },
+    email && { label: "Email us", href: `mailto:${email}`, external: false },
     linkedin && { label: "LinkedIn", href: linkedin, external: true },
     github && { label: "GitHub", href: github, external: true },
   ].filter(Boolean) as { label: string; href: string; external: boolean }[];
@@ -136,7 +136,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-6 text-2xl font-semibold text-white sm:text-3xl">
-                I build <RotatingWords words={site.headlineWords} />
+                We build <RotatingWords words={site.headlineWords} />
               </p>
               <p className="mt-3 max-w-xl text-lg text-slate-400">{site.subheadline}</p>
             </Reveal>
@@ -237,7 +237,7 @@ export default function Home() {
                         {p.problem}
                       </p>
                       <p className="mt-3 text-slate-400">
-                        <span className="font-semibold text-slate-200">What I built: </span>
+                        <span className="font-semibold text-slate-200">What we built: </span>
                         {p.solution}
                       </p>
                       <ul className="mt-5 space-y-2">
@@ -332,7 +332,7 @@ export default function Home() {
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">One fixed quote. Zero surprises.</h2>
                   <p className="mt-4 text-slate-300">
-                    Every business is different, so I don&apos;t sell one-size-fits-all packages. Tell me what you need, and
+                    Every business is different, so we don&apos;t sell one-size-fits-all packages. Tell us what you need, and
                     after a short free call you get a clear scope, timeline and fixed price, in rupees or dollars.
                   </p>
                   <a href="#contact" className={`${btnPrimary} mt-8`}>
@@ -387,7 +387,7 @@ export default function Home() {
                   Let&apos;s make your business run <span className="gradient-text">smarter.</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-lg text-slate-300">
-                  Tell me about your business and what you want to build or automate. {site.responseTime}
+                  Tell us about your business and what you want to build or automate. {site.responseTime}
                 </p>
                 <div className="mt-10">
                   <ContactButtons />
@@ -455,7 +455,7 @@ export default function Home() {
         <div className="border-t border-white/5">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-6 text-xs text-slate-500 sm:px-6">
             <p>
-              © {new Date().getFullYear()} {brandName} · {site.name}
+              © {new Date().getFullYear()} {brandName}
             </p>
             <p>Made with care in India 🇮🇳</p>
           </div>
