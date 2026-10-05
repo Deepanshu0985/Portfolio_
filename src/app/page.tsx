@@ -4,7 +4,20 @@ import { Reveal } from "@/components/Reveal";
 import { RotatingWords } from "@/components/RotatingWords";
 import { SpendwiseVisual } from "@/components/SpendwiseVisual";
 import { SpotlightCard } from "@/components/SpotlightCard";
-import { faqs, included, process, projects, services, site, techStack, type Project } from "@/content/site";
+import { Logo } from "@/components/Logo";
+import {
+  brandName,
+  faqs,
+  included,
+  pillars,
+  process,
+  projects,
+  proofPoints,
+  services,
+  site,
+  techStack,
+  type Project,
+} from "@/content/site";
 
 const btnPrimary =
   "shine inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition hover:shadow-violet-500/50";
@@ -90,15 +103,12 @@ export default function Home() {
 
       <header className="sticky top-0 z-40 border-b border-white/5 bg-[#05070f]/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-          <a href="#" className="flex items-center gap-2 font-semibold text-white">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 text-sm font-bold">
-              {site.name[0]}
-            </span>
-            {site.name}
+          <a href="#" aria-label={`${brandName} home`}>
+            <Logo />
           </a>
           <nav className="hidden items-center gap-8 text-sm text-slate-400 md:flex">
-            {["Services", "Work", "Process", "FAQ"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">
+            {["Services", "Work", "Why us", "Process", "FAQ"].map((item) => (
+              <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="transition hover:text-white">
                 {item}
               </a>
             ))}
@@ -116,18 +126,19 @@ export default function Home() {
             <Reveal>
               <p className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
                 <span className="pulse-dot h-2 w-2 rounded-full bg-emerald-400" />
-                Available for new projects · India & worldwide
+                {site.tagline} · Taking new projects
               </p>
             </Reveal>
             <Reveal delay={100}>
-              <h1 className="mt-6 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-6xl">
-                {site.headlineLead} <RotatingWords words={site.headlineWords} />
-                <br />
-                {site.headlineTail}
+              <h1 className="mt-6 text-5xl leading-[1.05] font-bold tracking-tight text-white sm:text-7xl">
+                {site.headline.before} <span className="gradient-text">{site.headline.highlight}</span>
               </h1>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-6 max-w-xl text-lg text-slate-400">{site.intro}</p>
+              <p className="mt-6 text-2xl font-semibold text-white sm:text-3xl">
+                I build <RotatingWords words={site.headlineWords} />
+              </p>
+              <p className="mt-3 max-w-xl text-lg text-slate-400">{site.subheadline}</p>
             </Reveal>
             <Reveal delay={300}>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -141,7 +152,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={400}>
               <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
-                {["Fixed quotes", "Weekly updates", "You own the code"].map((t) => (
+                {["Fixed quotes", "Weekly updates", "Direct with the engineer"].map((t) => (
                   <li key={t} className="flex items-center gap-2">
                     <span className="text-violet-300">✓</span>
                     {t}
@@ -153,6 +164,21 @@ export default function Home() {
           <Reveal delay={300} className="flex justify-center lg:justify-end">
             <ChatDemo />
           </Reveal>
+        </section>
+
+        {/* Proof points */}
+        <section aria-label="At a glance" className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+          <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {proofPoints.map((p, i) => (
+              <Reveal key={p.label} delay={i * 80}>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 text-center backdrop-blur">
+                  <dt className="sr-only">{p.label}</dt>
+                  <dd className="gradient-text text-3xl font-bold sm:text-4xl">{p.value}</dd>
+                  <dd className="mt-1 text-xs text-slate-400 sm:text-sm">{p.label}</dd>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
         </section>
 
         {/* Tech marquee */}
@@ -171,8 +197,8 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
               eyebrow="Services"
-              title="What I can build for you"
-              text="AI that saves your team hours every week, and the websites and apps it lives in."
+              title="Built to save time and win customers"
+              text="AI that works for your business around the clock, and the websites and apps it lives in."
             />
             <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
@@ -196,8 +222,8 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
               eyebrow="Work"
-              title="Live projects you can try"
-              text="Real, working software, not mockups. Open them and test them yourself."
+              title="Proof, not promises"
+              text="Live products you can open and test right now. No mockups, no stock screenshots."
             />
             <div className="mt-16 space-y-10">
               {projects.map((p, i) => (
@@ -250,10 +276,34 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Why */}
+        <section id="why-us" className="scroll-mt-20 py-28">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <SectionHeading
+              eyebrow={`Why ${brandName}`}
+              title="Agency quality. Freelancer focus."
+              text={site.intro}
+            />
+            <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {pillars.map((p, i) => (
+                <Reveal key={p.title} delay={i * 100}>
+                  <SpotlightCard className="h-full rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30">
+                    <div className="text-3xl" aria-hidden>
+                      {p.icon}
+                    </div>
+                    <h3 className="mt-4 font-semibold text-white">{p.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-400">{p.text}</p>
+                  </SpotlightCard>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Process */}
         <section id="process" className="scroll-mt-20 py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <SectionHeading eyebrow="Process" title="Simple, transparent, on time" />
+            <SectionHeading eyebrow="Process" title="From first call to launch, without the chaos" />
             <ol className="relative mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <div
                 aria-hidden
@@ -280,7 +330,7 @@ export default function Home() {
             <Reveal>
               <div className="grid gap-10 rounded-3xl border border-violet-400/20 bg-gradient-to-br from-violet-600/20 via-indigo-600/10 to-cyan-500/10 p-8 sm:p-12 lg:grid-cols-2">
                 <div>
-                  <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">A fixed quote, made for your project</h2>
+                  <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">One fixed quote. Zero surprises.</h2>
                   <p className="mt-4 text-slate-300">
                     Every business is different, so I don&apos;t sell one-size-fits-all packages. Tell me what you need, and
                     after a short free call you get a clear scope, timeline and fixed price, in rupees or dollars.
@@ -307,7 +357,7 @@ export default function Home() {
         {/* FAQ */}
         <section id="faq" className="scroll-mt-20 py-28">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <SectionHeading eyebrow="FAQ" title="Questions, answered" />
+            <SectionHeading eyebrow="FAQ" title="Questions clients ask before we start" />
             <div className="mt-14 space-y-3">
               {faqs.map((f, i) => (
                 <Reveal key={f.q} delay={i * 60}>
@@ -333,7 +383,9 @@ export default function Home() {
               <div aria-hidden className="blob -top-20 -left-20 h-72 w-72 bg-violet-500" />
               <div aria-hidden className="blob -right-20 -bottom-20 h-72 w-72 bg-cyan-500" style={{ animationDelay: "-9s" }} />
               <div className="relative">
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Let&apos;s build something great.</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+                  Let&apos;s make your business run <span className="gradient-text">smarter.</span>
+                </h2>
                 <p className="mx-auto mt-5 max-w-xl text-lg text-slate-300">
                   Tell me about your business and what you want to build or automate. {site.responseTime}
                 </p>
@@ -347,11 +399,66 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-white/5">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 text-sm text-slate-500 sm:px-6">
-          <p>
-            © {new Date().getFullYear()} {site.name}
-          </p>
-          <p>{site.role} · India & worldwide</p>
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr]">
+          <div>
+            <Logo />
+            <p className="mt-4 max-w-sm text-sm text-slate-400">
+              {site.tagline}. AI chatbots, automation, websites and apps for businesses in India and worldwide.
+            </p>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-white">Explore</p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-400">
+              {["Services", "Work", "Why us", "Process", "FAQ"].map((item) => (
+                <li key={item}>
+                  <a href={`#${item.toLowerCase().replace(" ", "-")}`} className="transition hover:text-white">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-white">Get in touch</p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-400">
+              {site.contact.email && (
+                <li>
+                  <a href={`mailto:${site.contact.email}`} className="break-all transition hover:text-white">
+                    {site.contact.email}
+                  </a>
+                </li>
+              )}
+              {site.contact.whatsapp && (
+                <li>
+                  <a href={site.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    WhatsApp
+                  </a>
+                </li>
+              )}
+              {site.contact.linkedin && (
+                <li>
+                  <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    LinkedIn
+                  </a>
+                </li>
+              )}
+              {site.contact.github && (
+                <li>
+                  <a href={site.contact.github} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    GitHub
+                  </a>
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-white/5">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-6 text-xs text-slate-500 sm:px-6">
+            <p>
+              © {new Date().getFullYear()} {brandName} · {site.name}
+            </p>
+            <p>Made with care in India 🇮🇳</p>
+          </div>
         </div>
       </footer>
     </div>

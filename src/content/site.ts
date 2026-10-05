@@ -2,14 +2,18 @@
 // contact links, services, projects or FAQs.
 
 export const site = {
+  // Brand: shown in the logo, page titles and share previews.
+  brand: "Deepanshu",
+  brandSuffix: ".dev",
+  tagline: "AI & software studio",
   name: "Deepanshu Yadav",
   role: "Software & AI Engineer",
-  headlineLead: "I build",
-  // Rotates in the hero headline.
+  headline: { before: "Your business, running", highlight: "smarter with AI." },
+  // Rotates in the line under the hero headline.
   headlineWords: ["AI chatbots", "AI automations", "modern websites", "full-stack apps", "mobile apps"],
-  headlineTail: "that grow your business.",
+  subheadline: "For businesses in India and around the world. Built by an engineer, delivered with a fixed quote.",
   intro:
-    "I'm a full-time software developer and AI engineer working with businesses in India and around the world. I take on a few projects at a time, so you get focused attention, clear communication and a product that works.",
+    "Deepanshu.dev is the studio of Deepanshu Yadav, a full-time software developer and AI engineer. You work directly with the person building your product, with no middlemen and no hand-offs.",
   // Contact links: leave a value empty to hide that button.
   contact: {
     email: "deepanshu.dev.ai098@gmail.com",
@@ -18,8 +22,41 @@ export const site = {
     linkedin: "",
     github: "https://github.com/Deepanshu0985",
   },
-  responseTime: "I reply within 24 hours.",
+  responseTime: "Replies within 24 hours.",
 };
+
+export const brandName = `${site.brand}${site.brandSuffix}`;
+
+/** Honest, checkable trust points (no invented numbers). */
+export const proofPoints = [
+  { value: "2", label: "Live products you can test" },
+  { value: "24h", label: "Reply time, every enquiry" },
+  { value: "100%", label: "Code ownership for you" },
+  { value: "Global", label: "Clients in India & worldwide" },
+];
+
+export const pillars = [
+  {
+    icon: "🤝",
+    title: "Work with the engineer",
+    text: "No sales team, no hand-offs. The person on your call is the person writing your code.",
+  },
+  {
+    icon: "🧠",
+    title: "AI-first, not AI-washed",
+    text: "AI where it saves you time or wins you customers, with guardrails so it never embarrasses your brand.",
+  },
+  {
+    icon: "📌",
+    title: "Fixed quote, clear scope",
+    text: "You know the price, timeline and deliverables before any work starts. No hourly surprises.",
+  },
+  {
+    icon: "🔑",
+    title: "Yours to keep",
+    text: "Full source code and every account in your name. No lock-in, ever.",
+  },
+];
 
 export type Service = { title: string; description: string; icon: string; outcome: string };
 
