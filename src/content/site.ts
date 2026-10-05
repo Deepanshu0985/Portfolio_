@@ -12,7 +12,7 @@ export const site = {
     "I'm a full-time software developer and AI engineer working with businesses in India and around the world. I take on a few projects at a time, so you get focused attention, clear communication and a product that works.",
   // Contact links: leave a value empty to hide that button.
   contact: {
-    email: "",
+    email: "deepanshu.dev.ai098@gmail.com",
     calendly: "",
     whatsapp: "", // e.g. "https://wa.me/91XXXXXXXXXX"
     linkedin: "",
