@@ -1,6 +1,6 @@
 import { site } from "@/content/site";
 
-/** Brand mark: an "N" monogram with an AI spark, plus the wordmark. */
+/** Brand mark: an "S" monogram with an AI spark, plus the wordmark. */
 export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} aria-hidden>
@@ -12,7 +12,7 @@ export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
       </defs>
       <rect width="40" height="40" rx="11" fill="url(#logo-gradient)" />
       <path
-        d="M11 29V11l15 18V11"
+        d="M26 13.2c-1.4-1.5-3.6-2.2-6-2.2-3.7 0-6.2 1.9-6.2 4.6 0 6.2 13 3.4 13 9.2 0 2.8-2.7 4.4-6.6 4.4-2.7 0-5.1-.9-6.6-2.6"
         fill="none"
         stroke="white"
         strokeWidth="3.2"
@@ -29,7 +29,8 @@ export function Logo({ className = "" }: { className?: string }) {
     <span className={`flex items-center gap-2.5 ${className}`}>
       <LogoMark />
       <span className="text-lg font-bold tracking-tight text-white">
-        {site.brand} <span className="gradient-text">{site.brandSuffix}</span>
+        {site.brand}
+        <span className="gradient-text">{site.brandSuffix}</span>
       </span>
     </span>
   );

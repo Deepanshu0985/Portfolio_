@@ -36,10 +36,10 @@ export default function OpengraphImage() {
               fontWeight: 800,
             }}
           >
-            N
+            S
           </div>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 700 }}>
-            {site.brand}&nbsp;<span style={{ color: "#67e8f9" }}>{site.brandSuffix}</span>
+            {brandName}
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>

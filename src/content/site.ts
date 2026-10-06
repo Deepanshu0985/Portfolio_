@@ -3,18 +3,18 @@
 
 export const site = {
   // Brand: shown in the logo, page titles and share previews.
-  brand: "Nexvora",
-  brandSuffix: "Labs",
+  brand: "Smart",
+  brandSuffix: "vyn",
   tagline: "AI & software studio",
   headline: { before: "Your business, running", highlight: "smarter with AI." },
   // Rotates in the line under the hero headline.
   headlineWords: ["AI chatbots", "AI automations", "modern websites", "full-stack apps", "mobile apps"],
   subheadline: "For businesses in India and around the world. Built by an engineer, delivered with a fixed quote.",
   intro:
-    "Nexvora Labs is an engineer-led AI and software studio. You talk directly to the people building your product, with no sales team, no middlemen and no hand-offs.",
+    "Smartvyn is an engineer-led AI and software studio. You talk directly to the people building your product, with no sales team, no middlemen and no hand-offs.",
   // Contact links: leave a value empty to hide that button.
   contact: {
-    email: "deepanshu.dev.ai098@gmail.com",
+    email: "hello.smartvyn@gmail.com",
     calendly: "",
     whatsapp: "", // e.g. "https://wa.me/91XXXXXXXXXX"
     linkedin: "",
@@ -23,7 +23,7 @@ export const site = {
   responseTime: "Replies within 24 hours.",
 };
 
-export const brandName = `${site.brand} ${site.brandSuffix}`;
+export const brandName = `${site.brand}${site.brandSuffix}`;
 
 /** Honest, checkable trust points (no invented numbers). */
 export const proofPoints = [
